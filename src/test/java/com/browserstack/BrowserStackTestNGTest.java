@@ -18,7 +18,6 @@ import org.testng.annotations.BeforeMethod;
 
 public class BrowserStackTestNGTest {
     public WebDriver driver;
-//    private Local l;
 
     @BeforeMethod(alwaysRun = true)
     @org.testng.annotations.Parameters(value = { "config", "environment" })
@@ -57,27 +56,18 @@ public class BrowserStackTestNGTest {
             accessKey = (String) config.get("key");
         }
 
-		//code to obtain ENV variables from Jenkins
+		//code to obtain Local Testing related ENV variables from Jenkins
         String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
 		String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
 
 		capabilities.setCapability("browserstack.local", browserstackLocal);
 		capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
-//        if (capabilities.getCapability("browserstack.local") != null
-//                && capabilities.getCapability("browserstack.local") == "true") {
-//			capabilities.setCapability("browserstack.local", browserstackLocal);
-//        }
-
-//		if (capabilities.getCapability("browserstack.localIdentifier") != null
-//				&& capabilities.getCapability("browserstack.localIdentifier") == "") {
-//			capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
-//		}
-
-		//Setting build name from Jenkins env variable for reports
+		//Setting build name from Jenkins ENV variable for reports
 		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 		capabilities.setCapability("build", buildName);
 
+		//Simple print statements to check if environment variables were set as expected
 		System.out.println(browserstackLocal);
 		System.out.println(browserstackLocalIdentifier);
 		System.out.println(buildName);
@@ -90,8 +80,5 @@ public class BrowserStackTestNGTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown() throws Exception {
         driver.quit();
-//        if (l != null) {
-//            l.stop();
-//        }
     }
 }
