@@ -4,7 +4,7 @@
   "key": "q2L8683jY8ctg2CayUoC",
 
   "capabilities": {
-    "build": "testng-browserstack-test",
+    "build": "",
     "name": "local-test-run with updated environment",
     "browserstack.debug": true,
     "browserstack.local": true,

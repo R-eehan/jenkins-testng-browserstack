@@ -71,6 +71,13 @@ public class BrowserStackTestNGTest {
 			capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 		}
 
+		//Setting build name from Jenkins env variable for reports
+		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+		if (capabilities.getCapability("browserstack.build") != null
+				&& capabilities.getCapability("browserstack.build") == "") {
+			capabilities.setCapability("browserstack.build", buildName);
+		}
+
 		System.out.println(browserstackLocal);
 		System.out.println(browserstackLocalIdentifier);
 		System.out.println(capabilities);
