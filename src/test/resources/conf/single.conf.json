@@ -1,0 +1,20 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "reehanahmed2",
+  "key": "q2L8683jY8ctg2CayUoC",
+
+  "capabilities": {
+    "build": "testng-browserstack-test",
+    "name": "single_test",
+    "browserstack.debug": true
+  },
+
+  "environments": {
+    "chrome": {
+	  "os": "Windows",
+	  "os_version": "10",
+      "browser": "chrome",
+	  "browser_version": "latest"
+    }
+  }
+}

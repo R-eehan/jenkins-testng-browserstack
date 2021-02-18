@@ -1,0 +1,63 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "reehanahmed2",
+  "key": "q2L8683jY8ctg2CayUoC",
+
+  "capabilities": {
+    "build": "Ticket-372419",
+    "name": "thread-count=4 specified check",
+    "browserstack.debug": true,
+	"browserstack.networkLogs": true
+  },
+
+  "environments": {
+    "chrome": {
+	  "os": "Windows",
+	  "os_version": "10",
+      "browser": "chrome",
+	  "browser_version": "latest"
+    },
+    "safari": {
+      "os": "OS X",
+	  "os_version": "Catalina",
+      "browser": "Safari",
+	  "browser_version": "13.1"
+    },
+	"firefox": {
+	  "os": "Windows",
+	  "os_version": "10",
+	  "browser": "firefox",
+	  "browser_version": "latest"
+	},
+	"edge": {
+	  "os": "Windows",
+	  "os_version": "10",
+	  "browser": "Edge",
+	  "browser_version": "latest"
+	},
+	"chrome": {
+	  "os": "Windows",
+	  "os_version": "10",
+	  "browser": "chrome",
+	  "browser_version": "latest - 1"
+	},
+	"chrome": {
+	  "os": "Windows",
+	  "os_version": "10",
+	  "browser": "chrome",
+	  "browser_version": "latest - 2"
+	},
+	"chrome": {
+	  "os": "Windows",
+	  "os_version": "10",
+	  "browser": "chrome",
+	  "browser_version": "81"
+	},
+	"chrome": {
+	  "os": "Windows",
+	  "os_version": "10",
+	  "browser": "chrome",
+	  "browser_version": "80"
+	}
+  }
+}
