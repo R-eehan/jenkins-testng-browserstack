@@ -61,25 +61,26 @@ public class BrowserStackTestNGTest {
         String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
 		String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
 
-        if (capabilities.getCapability("browserstack.local") != null
-                && capabilities.getCapability("browserstack.local") == "true") {
-			capabilities.setCapability("browserstack.local", browserstackLocal);
-        }
+		capabilities.setCapability("browserstack.local", browserstackLocal);
+		capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
 
-		if (capabilities.getCapability("browserstack.localIdentifier") != null
-				&& capabilities.getCapability("browserstack.localIdentifier") == "") {
-			capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
-		}
+//        if (capabilities.getCapability("browserstack.local") != null
+//                && capabilities.getCapability("browserstack.local") == "true") {
+//			capabilities.setCapability("browserstack.local", browserstackLocal);
+//        }
+
+//		if (capabilities.getCapability("browserstack.localIdentifier") != null
+//				&& capabilities.getCapability("browserstack.localIdentifier") == "") {
+//			capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
+//		}
 
 		//Setting build name from Jenkins env variable for reports
 		String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-		if (capabilities.getCapability("browserstack.build") != null
-				&& capabilities.getCapability("browserstack.build") == "") {
-			capabilities.setCapability("browserstack.build", buildName);
-		}
+		capabilities.setCapability("build", buildName);
 
 		System.out.println(browserstackLocal);
 		System.out.println(browserstackLocalIdentifier);
+		System.out.println(buildName);
 		System.out.println(capabilities);
 
         driver = new RemoteWebDriver(
